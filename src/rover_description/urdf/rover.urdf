@@ -266,4 +266,21 @@
       xyz="0 1 0" />
   </joint>
 
+  <!-- Gazebo Harmonic Differential Drive Plugin -->
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <!-- 1. Assigning Left and Right joints -->
+      <left_joint>FL_joint</left_joint>
+      <left_joint>BL_joint</left_joint>
+      <right_joint>FR_joint</right_joint>
+      <right_joint>BR_joint</right_joint>
+      
+      <!-- 2. Kinematics (Approximated from your URDF) -->
+      <wheel_separation>0.868</wheel_separation>
+      <wheel_radius>0.15</wheel_radius>
+      
+      <!-- 3. Communication Topic -->
+      <topic>/cmd_vel</topic>
+    </plugin>
+  </gazebo>
 </robot>
