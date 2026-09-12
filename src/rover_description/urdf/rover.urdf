@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="rover_description">
+  
+  <!-- base body -->
+  <link name="base_footprint" />
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0153558063080517 -0.0129021533665509 0.071529533909414"
+        rpy="0 0 0" />
+      <mass
+        value="33.768099021262" />
+      <inertia
+        ixx="0.548263062467536"
+        ixy="0.000122406198210831"
+        ixz="1.73311160578678E-05"
+        iyy="0.366642601577218"
+        iyz="0.00259053871374489"
+        izz="0.761708067340883" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh  
+          filename="package://rover_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 .52019" rpy="0 0 0"/>
+  </joint>
+
+  <link name="fr">
+    <inertial>
+      <origin
+        xyz="0.04496 -3.3085E-14 7.0198E-13"
+        rpy="0 0 0" />
+      <mass
+        value="2.8978" />
+      <inertia
+        ixx="0.025193"
+        ixy="1.019E-12"
+        ixz="-1.1189E-12"
+        iyy="0.014444"
+        iyz="2.1084E-13"
+        izz="0.014444" />
+    </inertial>
+  
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/fr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/fr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_joint"
+    type="continuous">
+    <origin
+      xyz="0.335 -0.434 -0.24377"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <link
+    name="fl">
+    <inertial>
+      <origin
+        xyz="-0.04496 -5.5511E-13 -4.1975E-13"
+        rpy="0 0 0" />
+      <mass
+        value="2.8978" />
+      <inertia
+        ixx="0.025193"
+        ixy="-1.4762E-12"
+        ixz="1.5948E-13"
+        iyy="0.014444"
+        iyz="4.4368E-14"
+        izz="0.014444" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/fl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/fl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_joint"
+    type="continuous">
+    <origin
+      xyz="0.335 0.434 -0.24377"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="br">
+    <inertial>
+      <origin
+        xyz="0.04496 -6.7072E-13 -5.8287E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.8978" />
+      <inertia
+        ixx="0.025193"
+        ixy="1.1602E-12"
+        ixz="9.6464E-13"
+        iyy="0.014444"
+        iyz="-2.0493E-13"
+        izz="0.014444" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/br.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/br.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_joint"
+    type="continuous">
+    <origin
+      xyz="-0.335 -0.434 -0.24377"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="br" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="bl">
+    <inertial>
+      <origin
+        xyz="-0.04496 -4.1105E-13 -5.1174E-13"
+        rpy="0 0 0" />
+      <mass
+        value="2.8978" />
+      <inertia
+        ixx="0.025193"
+        ixy="-1.4715E-12"
+        ixz="-2.4107E-13"
+        iyy="0.014444"
+        iyz="-7.9065E-14"
+        izz="0.014444" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/bl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_description/meshes/bl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_joint"
+    type="continuous">
+    <origin
+      xyz="-0.335 0.434 -0.24377"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+</robot>

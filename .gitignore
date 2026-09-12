@@ -1,0 +1,19 @@
+# Colcon build folders
+build/
+install/
+log/
+
+# Python compiled files and packaging
+*.pyc
+*.egg-info/
+__pycache__/
+
+# IDE and Editor specific folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
