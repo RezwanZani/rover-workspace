@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="magnet_sensor"/>
+
+    <joint name="magnet_sensor_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="magnet_sensor" />
+        <origin xyz="0 0 .1" rpy="0 0 0"/>
+        <!-- same pos as imu -->
+    </joint>
+
+    <gazebo reference="magnet_sensor">
+        <sensor name="magnet_sensor" type="magnetometer">
+            <always_on>1</always_on>
+            <!-- same rate as imu -->
+            <update_rate>20</update_rate>
+            <visualize>true</visualize>
+            <topic>magnet</topic>
+        </sensor>
+    </gazebo>
+</robot>

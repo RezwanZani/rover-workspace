@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="gps_sensor"/>
+    
+    <joint name="gps_sensor_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="gps_sensor" />
+        <origin xyz=".1 0 .1" rpy="0 0 0"/>
+    </joint>
+
+    <gazebo reference="gps_sensor">
+        <sensor name="gps_sensor" type="navsat">
+            <always_on>1</always_on>
+            <!-- TODO: set update rate depending upon gps -->
+            <gz_frame_id>gps_sensor</gz_frame_id>
+            <update_rate>15</update_rate>
+            <visualize>true</visualize>
+            <topic>/gps/fix</topic>
+
+            <navsat>
+                <position_sensing>
+                <horizontal>
+                    <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>0.0</stddev> <!-- 1m noise (non-RTK-like) -->
+                    </noise>
+                </horizontal>
+                <!-- for simplicity assume there no noise -->
+                <vertical>
+                    <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>0.0</stddev> <!-- 2cm vertical -->
+                    </noise>
+                </vertical>
+                </position_sensing>
+            </navsat>
+        </sensor>
+    </gazebo>
+
+</robot>

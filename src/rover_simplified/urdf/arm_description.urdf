@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rover arm">
+  <link
+    name="arm_base">
+    <inertial>
+      <origin
+        xyz="0.00567755240138013 0.00567755240138015 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="0.219714601836602" />
+      <inertia
+        ixx="0.000809395211252374"
+        ixy="1.39511876293042E-06"
+        ixz="-7.66582808705709E-22"
+        iyy="0.000809395211252375"
+        iyz="1.50453845685036E-19"
+        izz="0.0016178749449971" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/arm_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/arm_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="arm_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_base"/>
+    <origin xyz="0.23 -0.1 -0.05" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.00321484049255422 3.12250225675825E-17 0.0408096140609925"
+        rpy="0 0 0" />
+      <mass
+        value="0.252481388166578" />
+      <inertia
+        ixx="0.00232852214256694"
+        ixy="-4.65049884835835E-20"
+        ixz="-0.000158300162253446"
+        iyy="0.00233870934523182"
+        iyz="-1.21447993471354E-19"
+        izz="0.000430520852438905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.03"
+      rpy="0 0 0" />
+    <parent
+      link="arm_base" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="0.131913491203977 -1.70002900645727E-15 0.0350332483449756"
+        rpy="0 0 0" />
+      <mass
+        value="0.085674722411383" />
+      <inertia
+        ixx="0.000210805151897939"
+        ixy="2.52325065731522E-18"
+        ixz="-0.000517124038116016"
+        iyy="0.00201914460322091"
+        iyz="7.29483943784185E-19"
+        izz="0.00186310772482969" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.0175 0 0.28"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.189943739894268 6.00429910799227E-06 -0.0844328942921456"
+        rpy="0 0 0" />
+      <mass
+        value="0.131418626525538" />
+      <inertia
+        ixx="0.000486891300144448"
+        ixy="1.47091601589918E-08"
+        ixz="0.000834960403097945"
+        iyy="0.0024103240384243"
+        iyz="1.2049394701608E-08"
+        izz="0.00203797418164962" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0.34002 0 0.10205"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="-0.00343529419543243 -3.67761376907083E-16 -0.00313472551489585"
+        rpy="0 0 0" />
+      <mass
+        value="0.0563101859073127" />
+      <inertia
+        ixx="5.1247242619037E-05"
+        ixy="3.51668977443633E-20"
+        ixz="-5.50571415715293E-21"
+        iyy="5.03365686224172E-05"
+        iyz="3.81335732324138E-20"
+        izz="8.4299589491128E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0.38823 0 -0.16548"
+      rpy="0 0.15108 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="0.10843619664311 -0.00055437684167953 0.000393629836488552"
+        rpy="0 0 0" />
+      <mass
+        value="0.177395222587241" />
+      <inertia
+        ixx="0.00037565663799693"
+        ixy="4.88648028965259E-07"
+        ixz="5.75417852756756E-10"
+        iyy="0.000123429072516241"
+        iyz="2.147229074069E-10"
+        izz="0.000435514129296168" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="0.033 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="subjoint_1">
+    <inertial>
+      <origin
+        xyz="0.0653654661514584 -0.0302761425404001 0.0017536807359404"
+        rpy="0 0 0" />
+      <mass
+        value="0.04091587253667" />
+      <inertia
+        ixx="1.20569428105682E-05"
+        ixy="-1.5576875184607E-06"
+        ixz="8.11935061392522E-21"
+        iyy="2.76650005775733E-05"
+        iyz="2.74352831835672E-21"
+        izz="1.84410731851776E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/subjoint_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/subjoint_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="claw_1"
+    type="prismatic">
+    <origin
+      xyz="0.087 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="subjoint_1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="subjoint_2">
+    <inertial>
+      <origin
+        xyz="0.0656276293746121 0.0281826068609387 -4.71607815658581E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0421636734239773" />
+      <inertia
+        ixx="1.24869700941899E-05"
+        ixy="1.44510495638096E-06"
+        ixz="-1.25457259771671E-20"
+        iyy="2.78115307514956E-05"
+        iyz="-6.25536044020817E-21"
+        izz="1.83761388272756E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/subjoint_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///mnt/d/coding/urdf_ws/install/rover_arm_description/share/rover_arm_description/meshes/subjoint_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="claw_2"
+    type="prismatic">
+    <origin
+      xyz="0.087 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="subjoint_2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="1"
+      velocity="1" />
+  </joint>
+</robot>

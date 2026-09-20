@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- docu: https://github.com/gazebosim/gz-sim/blob/gz-sim8/src/systems/diff_drive/DiffDrive.hh -->
+    
+    <!-- <gazebo reference="FR_wheel">
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+    </gazebo>
+    
+    <gazebo reference="BR_wheel">
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+    </gazebo>
+
+    <gazebo reference="FL_wheel">
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+    </gazebo>
+
+    <gazebo reference="BL_wheel">
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+    </gazebo> -->
+
+    <gazebo>
+        <plugin 
+        filename="gz-sim-diff-drive-system"
+        name="gz::sim::systems::DiffDrive">
+            <right_joint>FR_joint</right_joint>
+            <right_joint>BR_joint</right_joint>
+            <left_joint>BL_joint</left_joint>
+            <left_joint>FL_joint</left_joint>
+            <wheel_separation>0.834</wheel_separation>
+            <wheel_radius>0.131</wheel_radius>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_footprint</child_frame_id>
+            <!-- <odom_publish_frequency></odom_publish_frequency>default is 50hz -->
+            <odom_topic>wheel_odometry</odom_topic><!-- default was: /model/<robo>/wheel_odometry -->
+
+            <topic>/cmd_vel</topic>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin 
+            filename="gz-sim-joint-state-publisher-system" 
+            name="gz::sim::systems::JointStatePublisher">
+            <!-- <joint_name>base_footprint_joint</joint_name> -->
+            <joint_name>FR_joint</joint_name>
+            <joint_name>BR_joint</joint_name>
+            <joint_name>BL_joint</joint_name>
+            <joint_name>FL_joint</joint_name>
+        </plugin>
+    </gazebo>
+
+</robot>

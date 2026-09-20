@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <!-- Package name must match the project name in CMakeLists.txt -->
+  <name>rover_simplified</name>
+  <version>0.0.1</version>
+  <description>URDF description and 3D meshes for the rover</description>
+
+  <!-- Maintainer and License information -->
+  <maintainer email="rezwan@todo.todo">rezwan</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- The build tool used for this package -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Execution dependencies required to run the simulation and visualization -->
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <!-- Exporting the build type for ament -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
