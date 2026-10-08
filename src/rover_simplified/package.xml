@@ -20,6 +20,9 @@
   <exec_depend>joint_state_publisher_gui</exec_depend>
   <exec_depend>rviz2</exec_depend>
 
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+
   <!-- Exporting the build type for ament -->
   <export>
     <build_type>ament_cmake</build_type>

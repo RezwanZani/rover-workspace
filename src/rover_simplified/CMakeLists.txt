@@ -7,8 +7,21 @@ endif()
 
 # Find necessary ROS 2 packages
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+add_executable(serial_receiver_node src/serial_receiver_node.cpp)
+ament_target_dependencies(serial_receiver_node
+  rclcpp
+  geometry_msgs
+)
 
 # Install directories to the share folder
+install(TARGETS
+  serial_receiver_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # This ensures ROS 2 can find your URDF, 3D meshes, and launch files during runtime.
 install(
   DIRECTORY 
